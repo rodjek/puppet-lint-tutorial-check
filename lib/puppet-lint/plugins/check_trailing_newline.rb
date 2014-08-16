@@ -10,4 +10,8 @@ PuppetLint.new_check(:trailing_newline) do
       }
     end
   end
+
+  def fix(problem)
+    tokens << PuppetLint::Lexer::Token.new(:NEWLINE, "\n", 0, 0)
+  end
 end
